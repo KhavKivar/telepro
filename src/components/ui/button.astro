@@ -1,0 +1,15 @@
+---
+import clsx from "clsx";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<button
+  class={clsx(
+    "bg-primary text-primary-foreground rounded-md p-2 hover:opacity-90 transition-opacity",
+    className,
+  )}
+  {...rest}
+>
+  <slot />
+</button>

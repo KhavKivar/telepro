@@ -1,0 +1,63 @@
+---
+import Card from "./ui/card.astro";
+import { Shield, Globe, Code } from "@lucide/astro";
+
+const allServices = [
+  {
+    title: "Servicios Limitados",
+    icon: Shield,
+    items: [
+      "Proyectos de Radiocomunicaciones para obtención de frecuencias VHF, UHF y HF",
+      "Proyectos de Repetidores (Estudio de Zona de Servicio)",
+      "Proyectos de Televisión por Cable (coaxial o fibra óptica)",
+      "Regularización de enlaces inalámbricos Punto a Punto en bandas 2.4 GHz, 5 GHz y otras",
+      "Regularización y permisos para sistemas de video vigilancia con enlaces de microondas",
+    ],
+  },
+  {
+    title: "Servicios Públicos",
+    icon: Globe,
+    items: [
+      "Servicios Públicos de Transmisión de datos inalámbricos en bandas de 2,4 GHz, 5 GHz y otras",
+      "Servicios Públicos de Transmisión de datos por medio de fibra óptica o cable (FTTH o HFC)",
+    ],
+  },
+  {
+    title: "Servicios Intermedios",
+    icon: Code,
+    items: ["Servicios Intermedios de Transmisión de datos"],
+  },
+];
+---
+
+<div class="w-full">
+  <div class="text-center">
+    <h1 class="text-2xl font-bold mb-4">
+      Tramites <span class="text-accent">Subtel</span>
+    </h1>
+    <div>
+      Gestión eficaz y aprobación garantizada ante la Subsecretaría de
+      Telecomunicaciones.
+    </div>
+  </div>
+  <div class="flex flex-col items-center py-5 bg-background">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-11/12 max-w-7xl">
+      {
+        allServices.map((service) => (
+          <Card>
+            <service.icon class="text-accent" slot="icon" size={24} />
+            <span slot="title">{service.title}</span>
+            <div slot="content" class="space-y-3">
+              {service.items.map((item) => (
+                <div class="flex gap-2">
+                  <span class="text-accent">•</span>
+                  <p class="text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
+        ))
+      }
+    </div>
+  </div>
+</div>
