@@ -13,6 +13,7 @@
   --muted: hsl(215, 15%, 45%);
   --accent: hsl(199, 89%, 42%);
   --accent-border: hsl(199, 89%, 42%);
+  --accent-foreground: #fff;
 }
 
 @theme {
@@ -29,20 +30,62 @@
  --color-accent-border: var(--accent-border);
  --color-border: var(--border);
  --color-muted: var(--muted);
+ --color-accent-foreground: var(--accent-foreground);
 }
 
 html, body {
   scroll-behavior: smooth;
    min-height: 100vh;
    overflow-x: hidden;
+ 
      background:  linear-gradient(180deg, #f8fcff 0%, #f2f8ff 100%);
+   padding: 0 10px;
 }
 
 
 section {
-  @apply w-full scroll-mt-16;
+  @apply scroll-mt-16;
   height: 100vh;
 
+}
+#Home {
+  @apply w-full scroll-mt-0;
+  background: transparent;
+  padding: 10px;
+
+}
+.content{  
+  height: 100%;
+  border-radius: 10px;
+  background-image: url("../assets/wapp.jpg");
+  filter: brightness(1.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav{
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
 
 
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content; /* Ensures the row doesn't wrap */
+  animation: scroll 10s linear infinite;
+}
+
+/* Pause on hover so users can see the logos clearly */
+.animate-infinite-scroll:hover {
+  animation-play-state: paused;
 }

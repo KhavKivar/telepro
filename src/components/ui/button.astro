@@ -1,12 +1,29 @@
 ---
 import clsx from "clsx";
 
-const { class: className, ...rest } = Astro.props;
+const variants = {
+  primary: "bg-primary text-primary-foreground",
+  secondary: "bg-accent text-accent-foreground",
+};
+
+type VariantType = keyof typeof variants;
+
+interface ButtonProps {
+  class?: string;
+  variant?: VariantType;
+}
+
+const {
+  class: className,
+  variant = "primary",
+  ...rest
+} = Astro.props as ButtonProps;
 ---
 
 <button
   class={clsx(
-    "bg-primary text-primary-foreground rounded-md p-2 hover:opacity-90 transition-opacity",
+    "p-2   rounded-md hover:opacity-90 transition-opacity cursor-pointer",
+    variants[variant],
     className,
   )}
   {...rest}
