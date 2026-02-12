@@ -2,8 +2,8 @@
 import { Radio } from "@lucide/astro";
 ---
 
-<div
-  class="h-14 border-b-2 border-border w-full bg-background sticky top-0 z-50 px-10"
+<nav
+  class="sticky top-0 h-16 border-b-2 border-border w-full bg-background s px-10"
 >
   <div class="w-full h-full flex items-center justify-between">
     <div class="flex items-center gap-2 justify-between w-full">
@@ -16,11 +16,20 @@ import { Radio } from "@lucide/astro";
 
       <div>
         <ul class="flex items-center gap-4">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li>
+            <a href="#Home" class="hover:text-accent transition-colors"
+              >Inicio</a>
+          </li>
+          <li>
+            <a href="#Services" class="hover:text-accent transition-colors"
+              >Servicios</a>
+          </li>
+          <li>
+            <a href="#Contact" class="hover:text-accent transition-colors"
+              >Contacto</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
-</div>
+</nav>
