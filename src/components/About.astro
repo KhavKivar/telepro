@@ -1,0 +1,130 @@
+---
+import {
+  GraduationCap,
+  Briefcase,
+  Award,
+  MapPin,
+  Calendar,
+} from "@lucide/astro";
+import Button from "./ui/button.astro";
+
+const stats = [
+  { label: "Proyectos", value: "400+", icon: Briefcase },
+  { label: "Años", value: "35+", icon: Calendar },
+  { label: "Regiones", value: "15+", icon: MapPin },
+];
+---
+
+<section
+  id="About"
+  class="relative py-24 bg-accent text-white overflow-hidden min-h-screen flex items-center"
+>
+  <!-- Background patterns/decorations -->
+  <div class="absolute inset-0 opacity-10 pointer-events-none">
+    <div
+      class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl -mr-48 -mt-48"
+    >
+    </div>
+    <div
+      class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -ml-48 -mb-48"
+    >
+    </div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <!-- Profile Side -->
+      <div class="space-y-12">
+        <div class="flex items-center gap-6">
+          <div
+            class="w-24 h-24 rounded-2xl bg-white/10 flex items-center justify-center text-4xl font-bold border border-white/20 backdrop-blur-sm"
+          >
+            LC
+          </div>
+          <div>
+            <h2 class="text-4xl font-bold">Luis Alberto Calderón Osorio</h2>
+            <p class="text-xl text-white/80 font-medium">
+              Ingeniero Electrónico
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-8">
+          <div class="flex items-start gap-4">
+            <div class="mt-1 bg-white/10 p-2 rounded-lg border border-white/20">
+              <GraduationCap class="w-6 h-6" />
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">Universidad de Tarapacá</h4>
+              <p class="text-white/70">Ingeniería Electrónica</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-4">
+            <div class="mt-1 bg-white/10 p-2 rounded-lg border border-white/20">
+              <Award class="w-6 h-6" />
+            </div>
+            <div>
+              <h4 class="font-bold text-lg">
+                Instituto Chileno de Neurociencias
+              </h4>
+              <p class="text-white/70">Diplomado en Neurociencias</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-6 pt-8">
+          {
+            stats.map((stat) => (
+              <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-sm hover:bg-white/10 transition-colors group">
+                <div class="flex justify-center mb-4">
+                  <stat.icon class="w-8 h-8 text-white/40 group-hover:text-white transition-colors" />
+                </div>
+                <div class="text-3xl font-bold mb-1">{stat.value}</div>
+                <div class="text-sm text-white/60 uppercase tracking-wider">
+                  {stat.label}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Content Side -->
+      <div class="space-y-8">
+        <div>
+          <h3
+            class="text-accent-foreground/60 uppercase tracking-widest font-bold text-sm mb-4"
+          >
+            Sobre Nosotros
+          </h3>
+          <h2 class="text-5xl font-bold leading-tight">
+            Asesoría en proyectos de telecomunicaciones
+          </h2>
+        </div>
+
+        <div class="space-y-6 text-lg text-white/80 leading-relaxed">
+          <p>
+            Con más de 35 años de experiencia en telecomunicaciones, hemos
+            trabajado en diversos campos, incluyendo electrónica de aviación
+            civil, detección de incendios y radiocomunicaciones.
+          </p>
+          <p>
+            Nuestro enfoque principal ha sido la instalación, mantenimiento y
+            programación de equipos y sistemas de radiocomunicaciones en
+            diferentes frecuencias. En los últimos 20 años, nos hemos
+            especializado en la creación de proyectos de telecomunicaciones para
+            Subtel.
+          </p>
+          <p>
+            Hemos completado más de 400 proyectos en distintas regiones de
+            Chile, incluyendo servicios limitados, transmisión de datos públicos
+            y radiodifusión FM. Además, hemos trabajado en proyectos para
+            empresas que compiten en concursos del Fondo de Desarrollo de
+            Telecomunicaciones (FDT).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

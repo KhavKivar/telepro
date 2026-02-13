@@ -1,0 +1,35 @@
+---
+import zofri from "@/assets/zofri.jpeg";
+import movistar from "@/assets/movistar.png";
+import subtel from "@/assets/subtel.png";
+import { Image } from "astro:assets";
+const logos = [
+  { src: zofri, alt: "Zofri" },
+  { src: movistar, alt: "Movistar" },
+  { src: subtel, alt: "Subtel" },
+  { src: zofri, alt: "Zofri" },
+  { src: movistar, alt: "Movistar" },
+  { src: subtel, alt: "Subtel" },
+  // Add more logos here as needed
+];
+---
+
+<div
+  class="bg-white w-[600px] h-14 flex items-center px-12 shadow-md mx-auto
+  overflow-hidden
+ [clip-path:path('M_0_56_L_40_10_Q_50_0_60_0_L_540_0_Q_550_0_560_10_L_600_56_Z')]"
+>
+  <div class="animate-infinite-scroll flex items-center gap-12 px-6 w-max">
+    {
+      logos.map((logo) => (
+        <Image src={logo.src} height={30} alt={logo.alt} class="max-w-none" />
+      ))
+    }
+
+    {
+      logos.map((logo) => (
+        <Image src={logo.src} height={30} alt={logo.alt} class="max-w-none" />
+      ))
+    }
+  </div>
+</div>

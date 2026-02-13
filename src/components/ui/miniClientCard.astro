@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import client1 from "@/assets/client1.png";
+import client2 from "@/assets/client2.png";
+import client3 from "@/assets/client3.png";
+---
+
+<div
+  class="flex items-center gap-4 bg-white/5 backdrop-blur-sm border border-white/10 p-2 rounded-2xl w-fit"
+>
+  <div class="flex -space-x-3">
+    <Image
+      src={client1}
+      alt="Client 1"
+      width={40}
+      height={40}
+      class="rounded-full border-2 border-black/20"
+    />
+    <Image
+      src={client2}
+      alt="Client 2"
+      width={40}
+      height={40}
+      class="rounded-full border-2 border-black/20"
+    />
+    <Image
+      src={client3}
+      alt="Client 3"
+      width={40}
+      height={40}
+      class="rounded-full border-2 border-black/20"
+    />
+  </div>
+  <div class="flex flex-col">
+    <span class="font-bold text-white tracking-tight leading-tight"
+      >+400 Clientes</span
+    >
+    <span class="text-xs text-gray-400 capitalize whitespace-nowrap"
+      >Alrededor de Chile</span
+    >
+  </div>
+</div>

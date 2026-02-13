@@ -1,63 +1,46 @@
 ---
 import Navbar from "./ui/navbar.astro";
 import Button from "./ui/button.astro";
-import zofri from "../assets/zofri.jpeg";
-import movistar from "../assets/movistar.png";
-import subtel from "../assets/subtel.png";
-import { Image } from "astro:assets";
+import Carrousel from "./ui/carrousel.astro";
+import MiniClientCard from "./ui/miniClientCard.astro";
+import ImageGallery from "./ui/imageGallery.tsx";
 const title = "Proyectos Subtel";
 const description =
   "Entendemos la complejidad de los trámites ante la Subsecretaría de Telecomunicaciones (Subtel). Por eso, te ofrecemos nuestra experiencia y conocimiento para gestionar eficazmente estos procesos.";
-
-const logos = [
-  { src: zofri, alt: "Zofri" },
-  { src: movistar, alt: "Movistar" },
-  { src: subtel, alt: "Subtel" },
-  // Add more logos here as needed
+const myImages = [
+  "/images/image1.jpg",
+  "/images/image2.jpg",
+  "/images/image3.jpg",
 ];
 ---
 
 <section id="Home" class="text-center">
-  <div class="content">
+  <div
+    class="h-[100vh]
+  rounded-[10px]
+  bg-cover
+  bg-center
+  bg-no-repeat
+  bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.3)_40%,rgba(0,0,0,0)_75%),url('../assets/wep4.jpeg')]"
+  >
     <div class="w-[95%] h-full mx-auto">
       <div class="absolute top-6 left-0 w-full z-50">
         <div class="w-[95%] mx-auto px-4">
           <Navbar />
         </div>
       </div>
+      <div class="w-full h-full flex flex-col justify-between gap-4">
+        <div class="spacer"></div>
+        <div class="text-left flex flex-col gap-4">
+          <h1 class="text-9xl text-white font-bold">{title}</h1>
+          <p class="text-2xl text-white text-left w-1/2">{description}</p>
+          <Button class="p-4 text-xl w-40" variant="secondary">
+            Contactanos
+          </Button>
+        </div>
 
-      <div class="flex flex-col items-start justify-center gap-4 w-full h-full">
-        <h1 class="text-9xl text-white font-bold">{title}</h1>
-        <p class="text-2xl text-white text-left w-1/2">{description}</p>
-      </div>
-      <div class="absolute bottom-0 w-1/2 -translate-x-1/2 left-1/2">
-        <div
-          class="bg-white flex-1 h-16 flex items-center justify-around px-12 -ml-8 shadow-md"
-          style="clip-path: polygon(5% 0%, 95% 0%, 100% 100%, 0% 100%);"
-        >
-          <div class="animate-infinite-scroll flex items-center gap-12 px-6">
-            {
-              logos.map((logo) => (
-                <Image
-                  src={logo.src}
-                  height={30}
-                  alt={logo.alt}
-                  class="max-w-none transition-opacity"
-                />
-              ))
-            }
-
-            {
-              logos.map((logo) => (
-                <Image
-                  src={logo.src}
-                  height={30}
-                  alt={logo.alt}
-                  class="max-w-none  transition-opacity"
-                />
-              ))
-            }
-          </div>
+        <div class="flex items-end">
+          <Carrousel />
         </div>
       </div>
     </div>

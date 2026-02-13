@@ -3,8 +3,15 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
 
 
-
 import icon from "astro-icon";
+
+
+
+import preact from "@astrojs/preact";
+
+
+
+import vercel from "@astrojs/vercel";
 
 
 
@@ -14,5 +21,7 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [icon()],
+  output: 'server',
+  integrations: [icon(), preact()],
+  adapter: vercel(),
 });
