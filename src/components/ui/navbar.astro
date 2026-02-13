@@ -1,17 +1,17 @@
 ---
-import { Radio, Menu, X } from "@lucide/astro";
-import Button from "./button.astro";
+import { Menu, X } from "@lucide/astro";
+import LogoIcon from "./LogoIcon.astro";
 ---
 
 <nav
   class="nav h-16 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50"
 >
   <div
-    class="max-w-7xl mx-auto h-full flex items-center justify-between px-4 sm:px-10"
+    class="max-w-7xl mx-auto h-full flex items-center justify-between px-1 md:px-10"
   >
     <!-- Logo -->
     <a href="#Home" class="flex items-center gap-2">
-      <Radio class="text-accent w-6 h-6" />
+      <LogoIcon class="w-10 h-10" />
       <span class="text-xl font-bold">
         Tele<span class="text-accent">pro</span>
       </span>
@@ -25,15 +25,18 @@ import Button from "./button.astro";
         </li>
         <li>
           <a href="#Services" class="hover:text-accent transition-colors"
-            >Servicios</a>
+            >Servicios</a
+          >
         </li>
         <li>
           <a href="#About" class="hover:text-accent transition-colors"
-            >Sobre Nosotros</a>
+            >Sobre Nosotros</a
+          >
         </li>
         <li>
           <a href="#Contact" class="hover:text-accent transition-colors"
-            >Contacto</a>
+            >Contacto</a
+          >
         </li>
       </ul>
     </div>
@@ -58,25 +61,29 @@ import Button from "./button.astro";
         <a
           href="#Home"
           class="mobile-link block text-lg font-medium hover:text-accent"
-          >Inicio</a>
+          >Inicio</a
+        >
       </li>
       <li>
         <a
           href="#Services"
           class="mobile-link block text-lg font-medium hover:text-accent"
-          >Servicios</a>
+          >Servicios</a
+        >
       </li>
       <li>
         <a
           href="#About"
           class="mobile-link block text-lg font-medium hover:text-accent"
-          >Sobre Nosotros</a>
+          >Sobre Nosotros</a
+        >
       </li>
       <li>
         <a
           href="#Contact"
           class="mobile-link block text-lg font-medium hover:text-accent"
-          >Contacto</a>
+          >Contacto</a
+        >
       </li>
     </ul>
   </div>

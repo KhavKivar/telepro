@@ -1,5 +1,6 @@
 ---
-import { Radio, Mail, Phone, MapPin } from "@lucide/astro";
+import { Mail, Phone, MapPin } from "@lucide/astro";
+import LogoIcon from "./ui/LogoIcon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -9,7 +10,7 @@ const currentYear = new Date().getFullYear();
       <!-- Brand Section -->
       <div class="space-y-4">
         <div class="flex items-center gap-2">
-          <Radio class="text-accent w-6 h-6" />
+          <LogoIcon class="w-10 h-10" />
           <span class="text-xl font-bold tracking-tight">
             Tele<span class="text-accent">pro</span>
           </span>

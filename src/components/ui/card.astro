@@ -1,19 +1,54 @@
 ---
-import clsx from "clsx";
-import Button from "./button.astro";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+interface Props {
+  class?: string;
+  highlighted?: boolean;
+}
+
+const { class: className, highlighted = false } = Astro.props;
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 ---
 
 <div
-  class="flex flex-col items-start border-border hover:border-accent-border border rounded-md gap-2 p-4 hover:scale-105
-  transition-scale duration-300 pb-20 bg-background z-0"
+  class={cn(
+    "flex flex-col items-start border rounded-2xl gap-4 p-8 transition-all duration-300 bg-background relative overflow-hidden group hover:scale-[1.02]",
+    highlighted
+      ? "border-accent shadow-2xl shadow-accent/20 scale-105 z-10 ring-1 ring-accent/50 hover:scale-[1.07]"
+      : "border-border hover:border-accent-border hover:shadow-xl",
+    className,
+  )}
 >
-  <div class="flex gap-2 items-center">
-    <div class="bg-accent/10 rounded-lg p-2">
+  {
+    highlighted && (
+      <div class="absolute top-0 right-0 bg-accent text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-bl-xl">
+        Destacado
+      </div>
+    )
+  }
+  <div class="flex gap-4 items-center">
+    <div
+      class={cn(
+        "rounded-xl p-3 transition-colors",
+        highlighted
+          ? "bg-accent text-white"
+          : "bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white",
+      )}
+    >
       <slot name="icon" />
     </div>
-    <div class="text-2xl font-bold"><slot name="title" /></div>
+    <div class="text-2xl font-bold tracking-tight"><slot name="title" /></div>
   </div>
-  <div class="text-muted">
+  <div
+    class={cn(
+      "text-muted leading-relaxed",
+      highlighted ? "text-foreground/90 font-medium" : "text-muted",
+    )}
+  >
     <slot name="content" />
   </div>
 </div>
