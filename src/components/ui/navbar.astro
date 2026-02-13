@@ -1,43 +1,113 @@
 ---
-import { Radio } from "@lucide/astro";
+import { Radio, Menu, X } from "@lucide/astro";
 import Button from "./button.astro";
 ---
 
-<nav class="nav h-16 border-b-2 border-border bg-background">
-  <div class="w-full h-full flex items-center justify-between">
-    <div class="flex items-center gap-2 justify-between w-full px-10">
-      <div class="flex items-center gap-2">
-        <Radio class="text-accent" />
-        <span class="text-xl font-bold"
-          >Tele<span class="text-accent">pro</span>
-        </span>
-      </div>
+<nav
+  class="nav h-16 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50"
+>
+  <div
+    class="max-w-7xl mx-auto h-full flex items-center justify-between px-4 sm:px-10"
+  >
+    <!-- Logo -->
+    <a href="#Home" class="flex items-center gap-2">
+      <Radio class="text-accent w-6 h-6" />
+      <span class="text-xl font-bold">
+        Tele<span class="text-accent">pro</span>
+      </span>
+    </a>
 
-      <div>
-        <ul class="flex items-center gap-4">
-          <li>
-            <a href="#Home" class="hover:text-accent transition-colors"
-              >Inicio</a
-            >
-          </li>
-
-          <li>
-            <a href="#Services" class="hover:text-accent transition-colors"
-              >Servicios</a
-            >
-          </li>
-          <li>
-            <a href="#About" class="hover:text-accent transition-colors"
-              >Sobre Nosotros</a
-            >
-          </li>
-          <li>
-            <a href="#Contact" class="hover:text-accent transition-colors"
-              >Contacto</a
-            >
-          </li>
-        </ul>
-      </div>
+    <!-- Desktop Navigation -->
+    <div class="hidden md:block">
+      <ul class="flex items-center gap-6">
+        <li>
+          <a href="#Home" class="hover:text-accent transition-colors">Inicio</a>
+        </li>
+        <li>
+          <a href="#Services" class="hover:text-accent transition-colors"
+            >Servicios</a>
+        </li>
+        <li>
+          <a href="#About" class="hover:text-accent transition-colors"
+            >Sobre Nosotros</a>
+        </li>
+        <li>
+          <a href="#Contact" class="hover:text-accent transition-colors"
+            >Contacto</a>
+        </li>
+      </ul>
     </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-toggle"
+      class="md:hidden p-2 text-foreground focus:outline-none"
+    >
+      <Menu id="menu-icon" class="w-6 h-6" />
+      <X id="close-icon" class="w-6 h-6 hidden" />
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden absolute top-16 left-0 w-full bg-background border-b border-border shadow-lg z-40"
+  >
+    <ul class="flex flex-col p-4 space-y-4">
+      <li>
+        <a
+          href="#Home"
+          class="mobile-link block text-lg font-medium hover:text-accent"
+          >Inicio</a>
+      </li>
+      <li>
+        <a
+          href="#Services"
+          class="mobile-link block text-lg font-medium hover:text-accent"
+          >Servicios</a>
+      </li>
+      <li>
+        <a
+          href="#About"
+          class="mobile-link block text-lg font-medium hover:text-accent"
+          >Sobre Nosotros</a>
+      </li>
+      <li>
+        <a
+          href="#Contact"
+          class="mobile-link block text-lg font-medium hover:text-accent"
+          >Contacto</a>
+      </li>
+    </ul>
   </div>
 </nav>
+
+<script>
+  const toggle = document.getElementById("mobile-menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const menuIcon = document.getElementById("menu-icon");
+  const closeIcon = document.getElementById("close-icon");
+  const links = document.querySelectorAll(".mobile-link");
+
+  function toggleMenu() {
+    const isHidden = menu?.classList.contains("hidden");
+    if (isHidden) {
+      menu?.classList.remove("hidden");
+      menuIcon?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+    } else {
+      menu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+    }
+  }
+
+  toggle?.addEventListener("click", toggleMenu);
+  links.forEach((link) =>
+    link.addEventListener("click", () => {
+      menu?.classList.add("hidden");
+      menuIcon?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+    }),
+  );
+</script>

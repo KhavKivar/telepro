@@ -11,22 +11,40 @@ type VariantType = keyof typeof variants;
 interface ButtonProps {
   class?: string;
   variant?: VariantType;
+  href?: string;
 }
 
 const {
   class: className,
   variant = "primary",
+  href,
   ...rest
 } = Astro.props as ButtonProps;
 ---
 
-<button
-  class={clsx(
-    "p-2   rounded-md hover:opacity-90 transition-opacity cursor-pointer",
-    variants[variant],
-    className,
-  )}
-  {...rest}
->
-  <slot />
-</button>
+{
+  href ? (
+    <a
+      href={href}
+      class={clsx(
+        "inline-flex items-center justify-center p-2 rounded-md hover:opacity-90 transition-opacity cursor-pointer",
+        variants[variant],
+        className,
+      )}
+      {...rest}
+    >
+      <slot />
+    </a>
+  ) : (
+    <button
+      class={clsx(
+        "p-2 rounded-md hover:opacity-90 transition-opacity cursor-pointer",
+        variants[variant],
+        className,
+      )}
+      {...rest}
+    >
+      <slot />
+    </button>
+  )
+}

@@ -30,34 +30,32 @@ const allServices = [
 ];
 ---
 
-<section id="Services" class="flex flex-col items-center lg:pt-10">
+<section id="Services" class="flex flex-col items-center py-20 sm:py-24 lg:py-28">
   <div class="text-center">
-    <h1 class="text-5xl font-bold mb-4">
+    <h2 class="text-5xl font-bold mb-4">
       Tramites <span class="text-accent">Subtel</span>
-    </h1>
+    </h2>
     <div class="text-lg">
       Gestión eficaz y aprobación garantizada ante la Subsecretaría de
       Telecomunicaciones.
     </div>
   </div>
-  <div class="flex sm:flex-col items-center">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-11/12 max-w-7xl mt-5">
-      {
-        allServices.map((service) => (
-          <Card>
-            <service.icon class="text-accent" slot="icon" size={24} />
-            <span slot="title">{service.title}</span>
-            <div slot="content" class="space-y-3">
-              {service.items.map((item) => (
-                <div class="flex gap-2">
-                  <span class="text-accent">•</span>
-                  <p class="leading-relaxed font-medium ">{item}</p>
-                </div>
-              ))}
-            </div>
-          </Card>
-        ))
-      }
-    </div>
+  <div class="mt-5 grid w-[92%] max-w-7xl grid-cols-1 gap-8 md:grid-cols-3">
+    {
+      allServices.map((service) => (
+        <Card>
+          <service.icon class="text-accent" slot="icon" size={24} />
+          <span slot="title">{service.title}</span>
+          <div slot="content" class="space-y-3">
+            {service.items.map((item) => (
+              <div class="flex gap-2">
+                <span class="text-accent">•</span>
+                <p class="leading-relaxed font-medium ">{item}</p>
+              </div>
+            ))}
+          </div>
+        </Card>
+      ))
+    }
   </div>
 </section>

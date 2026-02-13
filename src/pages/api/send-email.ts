@@ -2,6 +2,10 @@ import type { APIRoute } from "astro";
 import { Resend } from "resend";
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const resendFromEmail =
+  import.meta.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+const contactToEmail =
+  import.meta.env.CONTACT_TO_EMAIL || "teleprochile@gmail.com";
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
@@ -17,11 +21,24 @@ export const POST: APIRoute = async ({ request }) => {
     );
   }
 
+  if (!import.meta.env.RESEND_API_KEY) {
+    return new Response(
+      JSON.stringify({ error: "Falta configurar RESEND_API_KEY" }),
+      { status: 500 },
+    );
+  }
+
   const { data, error } = await resend.emails.send({
-    from: `${name} <${email}>`,
-    to: `permisossubtel@gmail.com`,
+    from: `Telepro Web <${resendFromEmail}>`,
+    to: contactToEmail,
+    replyTo: email,
     subject: `Contacto Web: ${subject}`,
-    html: `<p>De: ${email}</p><p>Mensaje: ${message}</p>`,
+    html: `
+      <p><strong>Nombre:</strong> ${name}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Asunto:</strong> ${subject}</p>
+      <p><strong>Mensaje:</strong><br/>${message}</p>
+    `,
   });
 
   if (error) {

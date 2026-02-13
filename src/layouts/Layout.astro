@@ -1,16 +1,106 @@
 ---
 import Analytics from "@vercel/analytics/astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const {
+  title = "Telepro - Proyectos y Asesoría Subtel",
+  description = "Especialistas en proyectos de telecomunicaciones y trámites ante Subtel. Más de 35 años de experiencia en servicios limitados, radiodifusión y transmisión de datos.",
+  image = "/og-image.jpg",
+  canonicalURL,
+} = Astro.props;
+
+const siteOrigin = Astro.site?.toString() ?? "https://telepro.cl/";
+const resolvedCanonicalURL =
+  canonicalURL ?? new URL(Astro.url.pathname, siteOrigin).toString();
+const resolvedImageURL = new URL(image, siteOrigin).toString();
+const robotsContent = import.meta.env.PROD
+  ? "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+  : "noindex, nofollow";
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "Telepro",
+      url: "https://telepro.cl/",
+      inLanguage: "es-CL",
+    },
+    {
+      "@type": "ProfessionalService",
+      name: "Telepro",
+      description:
+        "Asesoría y proyectos de telecomunicaciones para Subtel en Chile.",
+      url: "https://telepro.cl/",
+      image: resolvedImageURL,
+      telephone: "+56983785162",
+      areaServed: "Chile",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Santiago",
+        addressCountry: "CL",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: -33.4489,
+        longitude: -70.6693,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    },
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <meta name="author" content="Telepro" />
+    <meta name="robots" content={robotsContent} />
+    <meta name="theme-color" content="#0f172a" />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={resolvedCanonicalURL} />
+    <link rel="alternate" hrefLang="es-CL" href={resolvedCanonicalURL} />
+    <link rel="alternate" hrefLang="x-default" href="https://telepro.cl/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Telepro" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:url" content={resolvedCanonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={resolvedImageURL} />
+    <meta property="og:image:alt" content="Telepro - Proyectos Subtel" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={resolvedCanonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={resolvedImageURL} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+
     <Analytics />
   </head>
   <body>

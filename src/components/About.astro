@@ -17,7 +17,7 @@ const stats = [
 
 <section
   id="About"
-  class="relative py-24 bg-accent text-white overflow-hidden min-h-screen flex items-center"
+  class="relative min-h-screen overflow-hidden bg-accent py-16 text-white sm:py-24"
 >
   <!-- Background patterns/decorations -->
   <div class="absolute inset-0 opacity-10 pointer-events-none">
@@ -31,19 +31,21 @@ const stats = [
     </div>
   </div>
 
-  <div class="container mx-auto px-6 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
+  <div class="container relative z-10 mx-auto px-4 sm:px-6">
+    <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
       <!-- Profile Side -->
-      <div class="space-y-12">
-        <div class="flex items-center gap-6">
+      <div class="space-y-8 sm:space-y-12">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
           <div
-            class="w-24 h-24 rounded-2xl bg-white/10 flex items-center justify-center text-4xl font-bold border border-white/20 backdrop-blur-sm"
+            class="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-3xl font-bold backdrop-blur-sm sm:h-24 sm:w-24 sm:text-4xl"
           >
             LC
           </div>
-          <div>
-            <h2 class="text-4xl font-bold">Luis Alberto Calderón Osorio</h2>
-            <p class="text-xl text-white/80 font-medium">
+          <div class="min-w-0">
+            <h2 class="break-words text-2xl font-bold leading-tight sm:text-4xl">
+              Luis Alberto Calderón Osorio
+            </h2>
+            <p class="text-lg font-medium text-white/80 sm:text-xl">
               Ingeniero Electrónico
             </p>
           </div>
@@ -73,15 +75,17 @@ const stats = [
           </div>
         </div>
 
-        <div class="grid grid-cols-3 gap-6 pt-8">
+        <div class="grid grid-cols-3 gap-3 pt-6 sm:gap-6 sm:pt-8">
           {
             stats.map((stat) => (
-              <div class="bg-white/5 border border-white/10 rounded-2xl p-6 text-center backdrop-blur-sm hover:bg-white/10 transition-colors group">
-                <div class="flex justify-center mb-4">
-                  <stat.icon class="w-8 h-8 text-white/40 group-hover:text-white transition-colors" />
+              <div class="group rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm transition-colors sm:p-6 md:hover:bg-white/10">
+                <div class="mb-3 flex justify-center sm:mb-4">
+                  <stat.icon class="h-6 w-6 text-white/40 transition-colors group-hover:text-white sm:h-8 sm:w-8" />
                 </div>
-                <div class="text-3xl font-bold mb-1">{stat.value}</div>
-                <div class="text-sm text-white/60 uppercase tracking-wider">
+                <div class="mb-1 text-2xl font-bold leading-none sm:text-3xl">
+                  {stat.value}
+                </div>
+                <div class="text-[10px] leading-tight text-white/60 uppercase tracking-[0.14em] sm:text-sm sm:tracking-[0.16em]">
                   {stat.label}
                 </div>
               </div>
@@ -91,19 +95,19 @@ const stats = [
       </div>
 
       <!-- Content Side -->
-      <div class="space-y-8">
+      <div class="min-w-0 space-y-8">
         <div>
           <h3
             class="text-accent-foreground/60 uppercase tracking-widest font-bold text-sm mb-4"
           >
             Sobre Nosotros
           </h3>
-          <h2 class="text-5xl font-bold leading-tight">
+          <h2 class="break-words text-4xl font-bold leading-tight sm:text-5xl">
             Asesoría en proyectos de telecomunicaciones
           </h2>
         </div>
 
-        <div class="space-y-6 text-lg text-white/80 leading-relaxed">
+        <div class="space-y-6 text-base leading-relaxed text-white/80 sm:text-lg">
           <p>
             Con más de 35 años de experiencia en telecomunicaciones, hemos
             trabajado en diversos campos, incluyendo electrónica de aviación

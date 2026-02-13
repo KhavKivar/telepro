@@ -15,13 +15,18 @@ import vercel from "@astrojs/vercel";
 
 
 
+import sitemap from "@astrojs/sitemap";
+
+
+
 // https://astro.build/config
 export default defineConfig({
+  site: "https://telepro.cl",
   vite: {
     plugins: [tailwindcss()],
   },
 
   output: 'server',
-  integrations: [icon(), preact()],
+  integrations: [icon(), preact(), sitemap()],
   adapter: vercel(),
 });
