@@ -9,8 +9,8 @@ interface Props {
 }
 
 const {
-  title = "Telepro - Proyectos y Asesoría Subtel",
-  description = "Especialistas en proyectos de telecomunicaciones y trámites ante Subtel. Más de 35 años de experiencia en servicios limitados, radiodifusión y transmisión de datos.",
+  title = "Telepro - Proyectos y Trámites Subtel",
+  description = "Especialistas en la obtención de frecuencias VHF y UHF. Más de 35 años de experiencia en proyectos Subtel, servicios limitados, radiodifusión y trámites de telecomunicaciones en Chile.",
   image = "/og-image.jpg",
   canonicalURL,
 } = Astro.props;
@@ -100,7 +100,10 @@ const structuredData = {
     <meta property="twitter:image" content={resolvedImageURL} />
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(structuredData)}
+    />
 
     <Analytics />
   </head>
