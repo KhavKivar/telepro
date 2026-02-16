@@ -1,9 +1,8 @@
 ---
 import Navbar from "./ui/navbar.astro";
 import Button from "./ui/button.astro";
-import Carrousel from "./ui/carrousel.astro";
-import MiniClientCard from "./ui/miniClientCard.astro";
-import ImageGallery from "./ui/imageGallery.tsx";
+import BackgroundImage from "../assets/wep4.jpeg";
+import { Image } from "astro:assets";
 const title = "Proyectos y Trámites Subtel";
 const description =
   "Expertos en la obtención de frecuencias VHF y UHF. Gestión integral de proyectos y trámites ante la Subsecretaría de Telecomunicaciones (Subtel) para Servicios Limitados y Radiodifusión.";
@@ -16,47 +15,44 @@ const myImages = [
 
 <section id="Home" class="text-center">
   <div
-    class="h-[100dvh]
-  md:h-[100vh]
-  lg:h-[97vh]
-  rounded-none
-  md:rounded-[10px]
-  bg-cover
-  bg-center
-  bg-no-repeat
-  bg-[linear-gradient(to_right,rgba(0,0,0,0.7)_0%,rgba(0,0,0,0.3)_40%,rgba(0,0,0,0)_75%),url('../assets/wep4.jpeg')]"
+    class="relative h-dvh overflow-hidden rounded-none md:h-screen md:rounded-[10px] lg:h-[97vh]"
   >
-    <div class="w-full md:w-[95%] h-full mx-auto">
-      <div class="absolute top-0 md:top-6 left-0 w-full z-50">
-        <div class="w-full md:w-[95%] mx-auto px-0 md:px-4">
-          <Navbar />
-        </div>
-      </div>
+    <Image
+      src={BackgroundImage}
+      alt="Background"
+      loading="eager"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.4)_40%,rgba(0,0,0,0)_75%)]"
+    >
+    </div>
+    <div class="relative z-10 mx-auto h-full w-full md:w-[95%]">
       <div
-        class="w-full h-full flex flex-col justify-center md:justify-between py-10 md:py-0 px-4 md:px-0"
+        class="flex h-full w-full flex-col justify-center px-4 py-10 md:justify-between md:px-0 md:py-0"
       >
         <div class="spacer hidden md:block"></div>
-        <div class="text-left flex flex-col gap-4 mt-20 md:mt-0">
+        <div class="mt-20 flex flex-col gap-4 text-left md:mt-0">
           <h1
-            class="text-5xl md:text-7xl 2xl:text-9xl text-white font-bold leading-tight"
+            class="text-5xl leading-tight font-bold text-white md:text-7xl 2xl:text-9xl"
           >
             {title}
           </h1>
           <p
-            class="text-lg md:text-2xl text-white text-left w-full md:w-1/2 opacity-90"
+            class="w-full text-left text-lg text-white opacity-90 md:w-1/2 md:text-2xl"
           >
             {description}
           </p>
           <Button
             href="#Contact"
-            class="p-4 text-xl w-full sm:w-40"
+            class="w-full p-4 text-xl sm:w-40"
             variant="secondary"
           >
             Contactanos
           </Button>
         </div>
 
-        <div class="hidden md:flex items-end"></div>
+        <div class="hidden items-end md:flex"></div>
       </div>
     </div>
   </div>
