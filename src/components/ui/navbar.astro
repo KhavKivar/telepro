@@ -33,6 +33,9 @@ import NavItem from "./navItem.astro";
   <button
     id="mobile-menu-toggle"
     class="text-foreground p-2 focus:outline-none md:hidden"
+    aria-label="Menú de navegación"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
   >
     <Menu id="menu-icon" class="h-6 w-6" />
     <X id="close-icon" class="hidden h-6 w-6" />
@@ -89,10 +92,12 @@ import NavItem from "./navItem.astro";
       menu?.classList.remove("hidden");
       menuIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
+      toggle?.setAttribute("aria-expanded", "true");
     } else {
       menu?.classList.add("hidden");
       menuIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
     }
   }
 
@@ -102,6 +107,7 @@ import NavItem from "./navItem.astro";
       menu?.classList.add("hidden");
       menuIcon?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
     }),
   );
 </script>

@@ -17,21 +17,21 @@ const stats = [
 
 <section
   id="About"
-  class="relative min-h-screen overflow-hidden bg-accent py-16 text-white sm:py-24 lg:py-10 2xl:py-24"
+  class="bg-accent relative min-h-screen overflow-hidden py-16 text-white sm:py-24 lg:py-10 2xl:py-24"
 >
   <!-- Background patterns/decorations -->
-  <div class="absolute inset-0 opacity-10 pointer-events-none">
+  <div class="pointer-events-none absolute inset-0 opacity-10">
     <div
-      class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl -mr-48 -mt-48"
+      class="absolute top-0 right-0 -mt-48 -mr-48 h-96 w-96 rounded-full bg-white blur-3xl"
     >
     </div>
     <div
-      class="absolute bottom-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl -ml-48 -mb-48"
+      class="absolute bottom-0 left-0 -mb-48 -ml-48 h-96 w-96 rounded-full bg-white blur-3xl"
     >
     </div>
   </div>
 
-  <div class="container relative z-10 mx-auto px-4 sm:px-6">
+  <div class="relative z-10 container mx-auto px-4 sm:px-6">
     <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
       <!-- Profile Side -->
       <div class="space-y-8 sm:space-y-12">
@@ -43,7 +43,7 @@ const stats = [
           </div>
           <div class="min-w-0">
             <h2
-              class="wrap-break-word text-2xl font-bold leading-tight sm:text-4xl"
+              class="text-2xl leading-tight font-bold wrap-break-word sm:text-4xl"
             >
               Luis Alberto Calderón Osorio
             </h2>
@@ -55,23 +55,23 @@ const stats = [
 
         <div class="space-y-8">
           <div class="flex items-start gap-4">
-            <div class="mt-1 bg-white/10 p-2 rounded-lg border border-white/20">
-              <GraduationCap class="w-6 h-6" />
+            <div class="mt-1 rounded-lg border border-white/20 bg-white/10 p-2">
+              <GraduationCap class="h-6 w-6" />
             </div>
             <div>
-              <h4 class="font-bold text-lg">Universidad de Tarapacá</h4>
+              <h3 class="text-lg font-bold">Universidad de Tarapacá</h3>
               <p class="text-white/70">Ingeniería Electrónica</p>
             </div>
           </div>
 
           <div class="flex items-start gap-4">
-            <div class="mt-1 bg-white/10 p-2 rounded-lg border border-white/20">
-              <Award class="w-6 h-6" />
+            <div class="mt-1 rounded-lg border border-white/20 bg-white/10 p-2">
+              <Award class="h-6 w-6" />
             </div>
             <div>
-              <h4 class="font-bold text-lg">
+              <h3 class="text-lg font-bold">
                 Instituto Chileno de Neurociencias
-              </h4>
+              </h3>
               <p class="text-white/70">Diplomado en Neurociencias</p>
             </div>
           </div>
@@ -84,10 +84,10 @@ const stats = [
                 <div class="mb-3 flex justify-center sm:mb-4">
                   <stat.icon class="h-6 w-6 text-white/40 transition-colors group-hover:text-white sm:h-8 sm:w-8" />
                 </div>
-                <div class="mb-1 text-2xl font-bold leading-none sm:text-3xl">
+                <div class="mb-1 text-2xl leading-none font-bold sm:text-3xl">
                   {stat.value}
                 </div>
-                <div class="text-[10px] leading-tight text-white/60 uppercase tracking-[0.14em] sm:text-sm sm:tracking-[0.16em]">
+                <div class="text-[10px] leading-tight tracking-[0.14em] text-white/60 uppercase sm:text-sm sm:tracking-[0.16em]">
                   {stat.label}
                 </div>
               </div>
@@ -100,12 +100,12 @@ const stats = [
       <div class="min-w-0 space-y-8">
         <div>
           <h3
-            class="text-accent-foreground/60 uppercase tracking-widest font-bold text-sm mb-4"
+            class="text-accent-foreground/60 mb-4 text-sm font-bold tracking-widest uppercase"
           >
             Sobre Nosotros
           </h3>
           <h2
-            class="wrap-break-word text-4xl font-bold leading-tight sm:text-5xl"
+            class="text-4xl leading-tight font-bold wrap-break-word sm:text-5xl"
           >
             Asesoría en proyectos de telecomunicaciones
           </h2>
