@@ -1,17 +1,18 @@
 ---
 import { Menu, X } from "@lucide/astro";
 import LogoIcon from "./LogoIcon.astro";
+import NavItem from "./navItem.astro";
 ---
 
 <nav
-  class="nav h-16 border-b border-border bg-background/80 backdrop-blur-md sticky top-0 z-50"
+  class="nav border-border bg-background/80 sticky top-0 z-50 h-16 border-b backdrop-blur-md"
 >
   <div
-    class="max-w-7xl mx-auto h-full flex items-center justify-between px-1 md:px-10"
+    class="mx-auto flex h-full max-w-7xl items-center justify-between px-1 md:px-10"
   >
     <!-- Logo -->
     <a href="#Home" class="flex items-center gap-2">
-      <LogoIcon class="w-10 h-10" />
+      <LogoIcon class="h-10 w-10" />
       <span class="text-xl font-bold">
         Tele<span class="text-accent">pro</span>
       </span>
@@ -20,74 +21,60 @@ import LogoIcon from "./LogoIcon.astro";
     <!-- Desktop Navigation -->
     <div class="hidden md:block">
       <ul class="flex items-center gap-6">
-        <li>
-          <a href="#Home" class="hover:text-accent transition-colors">Inicio</a>
-        </li>
-        <li>
-          <a href="#Services" class="hover:text-accent transition-colors"
-            >Servicios</a
-          >
-        </li>
-        <li>
-          <a href="#About" class="hover:text-accent transition-colors"
-            >Sobre Nosotros</a
-          >
-        </li>
-        <li>
-          <a href="#Contact" class="hover:text-accent transition-colors"
-            >Contacto</a
-          >
-        </li>
+        <NavItem href="#Home">Inicio</NavItem>
+        <NavItem href="#Services">Servicios</NavItem>
+        <NavItem href="#About">Sobre Nosotros</NavItem>
+        <NavItem href="#Contact">Contacto</NavItem>
       </ul>
     </div>
-
-    <!-- Mobile Menu Button -->
-    <button
-      id="mobile-menu-toggle"
-      class="md:hidden p-2 text-foreground focus:outline-none"
-    >
-      <Menu id="menu-icon" class="w-6 h-6" />
-      <X id="close-icon" class="w-6 h-6 hidden" />
-    </button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div
-    id="mobile-menu"
-    class="hidden md:hidden absolute top-16 left-0 w-full bg-background border-b border-border shadow-lg z-40"
+  <!-- Mobile Menu Button -->
+  <button
+    id="mobile-menu-toggle"
+    class="text-foreground p-2 focus:outline-none md:hidden"
   >
-    <ul class="flex flex-col p-4 space-y-4">
-      <li>
-        <a
-          href="#Home"
-          class="mobile-link block text-lg font-medium hover:text-accent"
-          >Inicio</a
-        >
-      </li>
-      <li>
-        <a
-          href="#Services"
-          class="mobile-link block text-lg font-medium hover:text-accent"
-          >Servicios</a
-        >
-      </li>
-      <li>
-        <a
-          href="#About"
-          class="mobile-link block text-lg font-medium hover:text-accent"
-          >Sobre Nosotros</a
-        >
-      </li>
-      <li>
-        <a
-          href="#Contact"
-          class="mobile-link block text-lg font-medium hover:text-accent"
-          >Contacto</a
-        >
-      </li>
-    </ul>
-  </div>
+    <Menu id="menu-icon" class="h-6 w-6" />
+    <X id="close-icon" class="hidden h-6 w-6" />
+  </button>
 </nav>
+
+<!-- Mobile Menu -->
+<div
+  id="mobile-menu"
+  class="bg-background border-border absolute top-16 left-0 z-40 hidden w-full border-b shadow-lg md:hidden"
+>
+  <ul class="flex flex-col space-y-4 p-4">
+    <li>
+      <a
+        href="#Home"
+        class="mobile-link hover:text-accent block text-lg font-medium"
+        >Inicio</a
+      >
+    </li>
+    <li>
+      <a
+        href="#Services"
+        class="mobile-link hover:text-accent block text-lg font-medium"
+        >Servicios</a
+      >
+    </li>
+    <li>
+      <a
+        href="#About"
+        class="mobile-link hover:text-accent block text-lg font-medium"
+        >Sobre Nosotros</a
+      >
+    </li>
+    <li>
+      <a
+        href="#Contact"
+        class="mobile-link hover:text-accent block text-lg font-medium"
+        >Contacto</a
+      >
+    </li>
+  </ul>
+</div>
 
 <script>
   const toggle = document.getElementById("mobile-menu-toggle");
