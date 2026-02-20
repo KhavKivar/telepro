@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://telepro.cl/sitemap-index.xml
+Sitemap: https://www.telepro.cl/sitemap-index.xml
