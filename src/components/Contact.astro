@@ -8,59 +8,59 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
   class="flex items-center justify-center bg-transparent py-20 lg:py-10 2xl:py-20"
 >
   <div
-    class="w-[95%] max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+    class="mx-auto grid w-[95%] max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2"
   >
     <div class="flex flex-col gap-8">
       <div class="space-y-4">
-        <h2 class="text-5xl font-bold tracking-tighter text-foreground">
+        <h2 class="text-foreground text-5xl font-bold tracking-tighter">
           Trabajemos <span
-            class="text-accent underline decoration-accent/30 decoration-8 underline-offset-8"
+            class="text-accent decoration-accent/30 underline decoration-8 underline-offset-8"
             >juntos</span
           >
         </h2>
-        <p class="text-xl text-muted max-w-md leading-relaxed">
+        <p class="text-muted max-w-md text-xl leading-relaxed">
           ¿Tienes dudas o necesitas asesoría? Estamos aquí para ayudarte a
           gestionar tus procesos de telecomunicaciones.
         </p>
       </div>
 
       <div class="flex flex-col gap-6">
-        <div class="flex items-center gap-4 group">
+        <div class="group flex items-center gap-4">
           <div
-            class="p-3 rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300"
+            class="bg-accent/10 text-accent group-hover:bg-accent rounded-2xl p-3 transition-all duration-300 group-hover:text-white"
           >
-            <Mail class="w-6 h-6" />
+            <Mail class="h-6 w-6" />
           </div>
           <div>
-            <p class="text-sm font-medium text-muted uppercase tracking-wider">
+            <p class="text-muted text-sm font-medium tracking-wider uppercase">
               Email
             </p>
             <p class="text-lg font-semibold">teleprochile@gmail.com</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-4 group">
+        <div class="group flex items-center gap-4">
           <div
-            class="p-3 rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300"
+            class="bg-accent/10 text-accent group-hover:bg-accent rounded-2xl p-3 transition-all duration-300 group-hover:text-white"
           >
-            <Phone class="w-6 h-6" />
+            <Phone class="h-6 w-6" />
           </div>
           <div>
-            <p class="text-sm font-medium text-muted uppercase tracking-wider">
+            <p class="text-muted text-sm font-medium tracking-wider uppercase">
               Teléfono
             </p>
             <p class="text-lg font-semibold">+56 9 8378 51 62</p>
           </div>
         </div>
 
-        <div class="flex items-center gap-4 group">
+        <div class="group flex items-center gap-4">
           <div
-            class="p-3 rounded-2xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300"
+            class="bg-accent/10 text-accent group-hover:bg-accent rounded-2xl p-3 transition-all duration-300 group-hover:text-white"
           >
-            <MapPin class="w-6 h-6" />
+            <MapPin class="h-6 w-6" />
           </div>
           <div>
-            <p class="text-sm font-medium text-muted uppercase tracking-wider">
+            <p class="text-muted text-sm font-medium tracking-wider uppercase">
               Ubicación
             </p>
             <p class="text-lg font-semibold">Santiago, Chile</p>
@@ -70,57 +70,61 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
     </div>
 
     <div
-      class="bg-white/40 backdrop-blur-xl border border-white/20 p-8 rounded-4xl shadow-2xl shadow-accent/5"
+      class="shadow-accent/5 rounded-4xl border border-white/20 bg-white/40 p-8 shadow-2xl backdrop-blur-xl"
     >
       <form class="flex flex-col gap-5" id="contact-form">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
           <div class="flex flex-col gap-2">
-            <label for="name" class="text-sm font-medium px-1">Nombre</label>
+            <label for="name" class="px-1 text-sm font-medium">Nombre</label>
             <input
               type="text"
               id="name"
               name="name"
               placeholder="Tu nombre"
-              class="bg-white/60 border border-border focus:border-accent focus:ring-4 focus:ring-accent/10 p-3 rounded-xl transition-all outline-none"
+              required
+              class="border-border focus:border-accent focus:ring-accent/10 rounded-xl border bg-white/60 p-3 transition-all outline-none focus:ring-4"
             />
           </div>
           <div class="flex flex-col gap-2">
-            <label for="email" class="text-sm font-medium px-1">Email</label>
+            <label for="email" class="px-1 text-sm font-medium">Email</label>
             <input
               type="email"
               id="email"
               name="email"
               placeholder="tu@email.com"
-              class="bg-white/60 border border-border focus:border-accent focus:ring-4 focus:ring-accent/10 p-3 rounded-xl transition-all outline-none"
+              required
+              class="border-border focus:border-accent focus:ring-accent/10 rounded-xl border bg-white/60 p-3 transition-all outline-none focus:ring-4"
             />
           </div>
         </div>
 
         <div class="flex flex-col gap-2">
-          <label for="subject" class="text-sm font-medium px-1">Asunto</label>
+          <label for="subject" class="px-1 text-sm font-medium">Asunto</label>
           <input
             type="text"
             id="subject"
             name="subject"
             placeholder="¿En qué podemos ayudarte?"
-            class="bg-white/60 border border-border focus:border-accent focus:ring-4 focus:ring-accent/10 p-3 rounded-xl transition-all outline-none"
+            required
+            class="border-border focus:border-accent focus:ring-accent/10 rounded-xl border bg-white/60 p-3 transition-all outline-none focus:ring-4"
           />
         </div>
 
         <div class="flex flex-col gap-2">
-          <label for="message" class="text-sm font-medium px-1">Mensaje</label>
+          <label for="message" class="px-1 text-sm font-medium">Mensaje</label>
           <textarea
             id="message"
             rows="4"
             name="message"
             placeholder="Cuéntanos más sobre tu requerimiento..."
-            class="bg-white/60 border border-border focus:border-accent focus:ring-4 focus:ring-accent/10 p-3 rounded-xl transition-all resize-none outline-none"
+            required
+            class="border-border focus:border-accent focus:ring-accent/10 resize-none rounded-xl border bg-white/60 p-3 transition-all outline-none focus:ring-4"
           ></textarea>
         </div>
 
         <Button
           variant="secondary"
-          class="w-full py-4 rounded-xl text-lg font-bold shadow-lg shadow-accent/20 active:scale-[0.98]"
+          class="shadow-accent/20 w-full rounded-xl py-4 text-lg font-bold shadow-lg active:scale-[0.98]"
         >
           Enviar mensaje
         </Button>
@@ -160,6 +164,29 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(form);
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
+
+    // Simple validation
+    if (!name.trim()) {
+      showStatus("Por favor, ingrese su nombre.", true);
+      return;
+    }
+    if (!email.trim() || !/^\S+@\S+\.\S+$/.test(email)) {
+      showStatus("Por favor, ingrese un email válido.", true);
+      return;
+    }
+    if (!subject.trim()) {
+      showStatus("Por favor, ingrese un asunto.", true);
+      return;
+    }
+    if (!message.trim()) {
+      showStatus("Por favor, ingrese su mensaje.", true);
+      return;
+    }
+
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -167,13 +194,16 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
       });
 
       if (response.ok) {
-        showStatus("Mensaje enviado");
+        showStatus("Mensaje enviado con éxito.");
         form.reset();
       } else {
-        showStatus("Hubo un error al enviar el mensaje", true);
+        showStatus(
+          "Hubo un error al enviar el mensaje. Intente nuevamente.",
+          true,
+        );
       }
     } catch {
-      showStatus("Hubo un error al enviar el mensaje", true);
+      showStatus("Hubo un error de conexión. Intente nuevamente.", true);
     }
   });
 </script>

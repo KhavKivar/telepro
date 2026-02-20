@@ -1,7 +1,9 @@
 ---
 import { Menu, X } from "@lucide/astro";
-import LogoIcon from "./LogoIcon.astro";
+
 import NavItem from "./navItem.astro";
+import { Image } from "astro:assets";
+import Logo from "@/../public/favicon.svg";
 ---
 
 <nav
@@ -12,7 +14,7 @@ import NavItem from "./navItem.astro";
   >
     <!-- Logo -->
     <a href="#Home" class="flex items-center gap-2">
-      <LogoIcon class="h-10 w-10" />
+      <Image src={Logo} alt="Logo" class="h-10 w-10" />
       <span class="text-xl font-bold">
         Tele<span class="text-accent">pro</span>
       </span>
