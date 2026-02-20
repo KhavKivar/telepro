@@ -1,6 +1,5 @@
 ---
 import { Mail, Phone, MapPin } from "@lucide/astro";
-import LogoIcon from "./ui/LogoIcon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
@@ -16,7 +15,11 @@ const currentYear = new Date().getFullYear();
       <!-- Brand Section -->
       <div class="space-y-6">
         <div class="flex items-center gap-2">
-          <LogoIcon class="h-10 w-10 text-sky-600 drop-shadow-sm" />
+          <img
+            src="/favicon_4.svg"
+            alt="Logo"
+            class="h-10 w-10 text-sky-600 drop-shadow-sm"
+          />
           <span class="text-foreground text-2xl font-extrabold tracking-tight">
             Tele<span class="text-sky-600">pro</span>
           </span>
