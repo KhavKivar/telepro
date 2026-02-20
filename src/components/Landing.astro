@@ -14,11 +14,15 @@ const myImages = [
 ---
 
 <section id="Home" class="text-center">
-  <div class="relative h-dvh overflow-hidden rounded-none md:h-screen">
+  <div
+    class="relative h-dvh overflow-hidden rounded-none bg-slate-900 md:h-screen"
+  >
     <Image
       src={BackgroundImage}
       alt="Background"
       loading="eager"
+      fetchpriority="high"
+      format="webp"
       class="absolute inset-0 h-full w-full object-cover"
     />
     <div
