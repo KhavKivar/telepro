@@ -12,7 +12,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://telepro.cl",
+  site: "https://www.telepro.cl",
   trailingSlash: "never",
   vite: {
     plugins: [tailwindcss()],

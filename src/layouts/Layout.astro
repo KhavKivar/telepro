@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 
 const siteOrigin =
-  Astro.site?.toString().replace(/\/$/, "") ?? "https://telepro.cl";
+  Astro.site?.toString().replace(/\/$/, "") ?? "https://www.telepro.cl";
 const resolvedCanonicalURL =
   canonicalURL ??
   new URL(Astro.url.pathname, siteOrigin).toString().replace(/\/$/, "");
@@ -30,7 +30,7 @@ const structuredData = {
     {
       "@type": "WebSite",
       name: "Telepro",
-      url: "https://telepro.cl",
+      url: "https://www.telepro.cl",
       inLanguage: "es-CL",
     },
     {
@@ -38,7 +38,7 @@ const structuredData = {
       name: "Telepro",
       description:
         "Asesoría y proyectos de telecomunicaciones para Subtel en Chile.",
-      url: "https://telepro.cl",
+      url: "https://www.telepro.cl",
       image: resolvedImageURL,
       telephone: "+56983785162",
       areaServed: "Chile",
@@ -86,7 +86,7 @@ const structuredData = {
     />
     <link rel="canonical" href={resolvedCanonicalURL} />
     <link rel="alternate" hreflang="es-CL" href={resolvedCanonicalURL} />
-    <link rel="alternate" hreflang="x-default" href="https://telepro.cl" />
+    <link rel="alternate" hreflang="x-default" href="https://www.telepro.cl" />
 
     <!-- Structured Data -->
     <script
