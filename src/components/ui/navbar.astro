@@ -2,83 +2,110 @@
 import { Menu, X } from "@lucide/astro";
 
 import NavItem from "./navItem.astro";
-import { Image } from "astro:assets";
-import Logo from "@/../public/favicon.svg";
 ---
 
 <nav
-  class="nav border-border bg-background/80 sticky top-0 z-50 h-16 border-b backdrop-blur-md"
+  class="relative flex h-16 w-full items-center justify-between px-4 sm:h-20 sm:px-6 lg:px-8"
 >
-  <div
-    class="mx-auto flex h-full max-w-7xl items-center justify-between px-1 md:px-10"
+  <!-- Logo -->
+  <a
+    href="#Home"
+    class="flex items-center gap-3 transition-transform hover:scale-[1.02]"
   >
-    <!-- Logo -->
-    <a href="#Home" class="flex items-center gap-2">
-      <Image src={Logo} alt="Logo" class="h-10 w-10" />
-      <span class="text-xl font-bold">
-        Tele<span class="text-accent">pro</span>
-      </span>
-    </a>
-
-    <!-- Desktop Navigation -->
-    <div class="hidden md:block">
-      <ul class="flex items-center gap-6">
-        <NavItem href="#Home">Inicio</NavItem>
-        <NavItem href="#Services">Servicios</NavItem>
-        <NavItem href="#About">Sobre Nosotros</NavItem>
-        <NavItem href="#Contact">Contacto</NavItem>
-      </ul>
+    <div
+      class="flex items-center justify-center rounded-xl border border-slate-100 bg-white p-1.5 shadow-sm"
+    >
+      <img src="/favicon_2.ico" alt="Logo" class="h-8 w-8 sm:h-9 sm:w-9" />
     </div>
+    <span
+      class="text-xl font-extrabold tracking-tight text-slate-800 sm:text-2xl"
+    >
+      Tele<span class="text-sky-600">pro</span>
+    </span>
+  </a>
+
+  <!-- Desktop Navigation -->
+  <div class="hidden flex-1 justify-center md:flex">
+    <ul class="flex items-center gap-8 lg:gap-12">
+      <NavItem
+        href="#Home"
+        class="text-sm font-bold tracking-wide text-slate-600 transition-colors hover:text-sky-600"
+        >Inicio</NavItem
+      >
+      <NavItem
+        href="#Services"
+        class="text-sm font-bold tracking-wide text-slate-600 transition-colors hover:text-sky-600"
+        >Servicios</NavItem
+      >
+      <NavItem
+        href="#About"
+        class="text-sm font-bold tracking-wide text-slate-600 transition-colors hover:text-sky-600"
+        >Nosotros</NavItem
+      >
+    </ul>
+  </div>
+
+  <div class="hidden justify-end md:flex">
+    <a
+      href="#Contact"
+      class="inline-flex items-center justify-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-bold tracking-wide text-white shadow-sm transition-colors hover:bg-sky-600"
+    >
+      Contacto
+    </a>
   </div>
 
   <!-- Mobile Menu Button -->
   <button
     id="mobile-menu-toggle"
-    class="text-foreground p-2 focus:outline-none md:hidden"
+    class="rounded-xl border border-slate-200 bg-slate-100 p-2.5 text-slate-700 shadow-sm transition-colors hover:bg-slate-200 focus:outline-none md:hidden"
     aria-label="Menú de navegación"
     aria-expanded="false"
     aria-controls="mobile-menu"
   >
-    <Menu id="menu-icon" class="h-6 w-6" />
-    <X id="close-icon" class="hidden h-6 w-6" />
+    <Menu id="menu-icon" class="h-5 w-5 sm:h-6 sm:w-6" />
+    <X id="close-icon" class="hidden h-5 w-5 sm:h-6 sm:w-6" />
   </button>
 </nav>
 
-<!-- Mobile Menu -->
+<!-- Mobile Menu Dropdown -->
 <div
   id="mobile-menu"
-  class="bg-background border-border absolute top-16 left-0 z-40 hidden w-full border-b shadow-lg md:hidden"
+  class="absolute top-full right-0 left-0 z-40 hidden w-full origin-top transform md:hidden"
 >
-  <ul class="flex flex-col space-y-4 p-4">
-    <li>
-      <a
-        href="#Home"
-        class="mobile-link hover:text-accent block text-lg font-medium"
-        >Inicio</a
-      >
-    </li>
-    <li>
-      <a
-        href="#Services"
-        class="mobile-link hover:text-accent block text-lg font-medium"
-        >Servicios</a
-      >
-    </li>
-    <li>
-      <a
-        href="#About"
-        class="mobile-link hover:text-accent block text-lg font-medium"
-        >Sobre Nosotros</a
-      >
-    </li>
-    <li>
-      <a
-        href="#Contact"
-        class="mobile-link hover:text-accent block text-lg font-medium"
-        >Contacto</a
-      >
-    </li>
-  </ul>
+  <div
+    class="mx-4 mt-2 mb-4 overflow-hidden rounded-2xl border border-slate-200/60 bg-white/95 shadow-2xl ring-1 ring-black/5 backdrop-blur-xl"
+  >
+    <ul class="flex flex-col p-2">
+      <li>
+        <a
+          href="#Home"
+          class="mobile-link block rounded-xl px-6 py-4 text-base font-bold text-slate-700 transition-colors hover:bg-sky-50 hover:text-sky-600"
+          >Inicio</a
+        >
+      </li>
+      <li>
+        <a
+          href="#Services"
+          class="mobile-link block rounded-xl px-6 py-4 text-base font-bold text-slate-700 transition-colors hover:bg-sky-50 hover:text-sky-600"
+          >Servicios</a
+        >
+      </li>
+      <li>
+        <a
+          href="#About"
+          class="mobile-link block rounded-xl px-6 py-4 text-base font-bold text-slate-700 transition-colors hover:bg-sky-50 hover:text-sky-600"
+          >Sobre Nosotros</a
+        >
+      </li>
+      <li class="mt-2 border-t border-slate-100 p-2">
+        <a
+          href="#Contact"
+          class="mobile-link flex w-full justify-center rounded-xl bg-sky-600 px-6 py-4 text-base font-bold text-white shadow-md transition-colors hover:bg-sky-700"
+          >Contáctanos</a
+        >
+      </li>
+    </ul>
+  </div>
 </div>
 
 <script>
@@ -92,6 +119,21 @@ import Logo from "@/../public/favicon.svg";
     const isHidden = menu?.classList.contains("hidden");
     if (isHidden) {
       menu?.classList.remove("hidden");
+      // Optional: add a slight animation class via Tailwind
+      menu?.classList.add(
+        "animate-in",
+        "slide-in-from-top-4",
+        "fade-in",
+        "duration-200",
+      );
+      setTimeout(() => {
+        menu?.classList.remove(
+          "animate-in",
+          "slide-in-from-top-4",
+          "fade-in",
+          "duration-200",
+        );
+      }, 200);
       menuIcon?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
       toggle?.setAttribute("aria-expanded", "true");

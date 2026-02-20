@@ -6,7 +6,6 @@ import {
   MapPin,
   Calendar,
 } from "@lucide/astro";
-import Button from "./ui/button.astro";
 
 const stats = [
   { label: "Proyectos", value: "400+", icon: Briefcase },
@@ -17,123 +16,136 @@ const stats = [
 
 <section
   id="About"
-  class="bg-accent relative min-h-screen overflow-hidden py-16 text-white sm:py-24 lg:py-10 2xl:py-24"
+  class="relative z-10 min-h-screen overflow-hidden border-y border-slate-100 bg-white py-24"
 >
   <!-- Background patterns/decorations -->
-  <div class="pointer-events-none absolute inset-0 opacity-10">
+  <div class="pointer-events-none absolute inset-0 opacity-40">
     <div
-      class="absolute top-0 right-0 -mt-48 -mr-48 h-96 w-96 rounded-full bg-white blur-3xl"
+      class="absolute top-0 right-[-10%] h-[50%] w-[50%] rounded-full bg-sky-50 blur-[120px]"
     >
     </div>
     <div
-      class="absolute bottom-0 left-0 -mb-48 -ml-48 h-96 w-96 rounded-full bg-white blur-3xl"
+      class="absolute bottom-0 left-[-10%] h-[50%] w-[50%] rounded-full bg-slate-50 blur-[100px]"
     >
     </div>
   </div>
 
-  <div class="relative z-10 container mx-auto px-4 sm:px-6">
-    <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-      <!-- Profile Side -->
-      <div class="space-y-8 sm:space-y-12">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
+  <div class="relative z-10 container mx-auto max-w-7xl px-4 sm:px-0">
+    <div class="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
+      <!-- Content Side -->
+      <div
+        class="order-2 flex min-w-0 flex-col justify-center space-y-10 lg:order-1"
+      >
+        <div>
           <div
-            class="flex h-20 w-20 items-center justify-center rounded-2xl border border-white/20 bg-white/10 text-3xl font-bold backdrop-blur-sm sm:h-24 sm:w-24 sm:text-4xl"
+            class="mb-6 inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-sm font-bold tracking-widest text-slate-700 uppercase"
           >
-            LC
+            Sobre Nosotros
           </div>
-          <div class="min-w-0">
-            <h2
-              class="text-2xl leading-tight font-bold wrap-break-word sm:text-4xl"
+          <h2
+            class="text-foreground mb-8 text-[clamp(2.25rem,4vw+1rem,3.75rem)] leading-[1.15] font-extrabold tracking-tight wrap-break-word"
+          >
+            Asesoría experta en proyectos de <span
+              class="bg-gradient-to-r from-sky-600 to-blue-500 bg-clip-text text-transparent"
+              >telecomunicaciones</span
             >
-              Luis Alberto Calderón Osorio
-            </h2>
-            <p class="text-lg font-medium text-white/80 sm:text-xl">
-              Ingeniero Electrónico
+          </h2>
+          <div
+            class="text-[clamp(1.125rem,1.5vw+0.5rem,1.25rem)] leading-relaxed font-medium text-slate-600"
+          >
+            <p>
+              Con más de 35 años de experiencia, nos especializamos en la
+              gestión integral de <strong class="font-bold text-slate-900"
+                >proyectos Subtel</strong
+              >. Aseguramos eficacia técnica y legal en la <strong
+                class="font-bold text-slate-900"
+                >obtención de frecuencias VHF y UHF</strong
+              >, radiocomunicaciones y transmisión de datos para empresas a lo
+              largo de todo Chile.
             </p>
           </div>
         </div>
-
-        <div class="space-y-8">
-          <div class="flex items-start gap-4">
-            <div class="mt-1 rounded-lg border border-white/20 bg-white/10 p-2">
-              <GraduationCap class="h-6 w-6" />
-            </div>
-            <div>
-              <h3 class="text-lg font-bold">Universidad de Tarapacá</h3>
-              <p class="text-white/70">Ingeniería Electrónica</p>
-            </div>
-          </div>
-
-          <div class="flex items-start gap-4">
-            <div class="mt-1 rounded-lg border border-white/20 bg-white/10 p-2">
-              <Award class="h-6 w-6" />
-            </div>
-            <div>
-              <h3 class="text-lg font-bold">
-                Instituto Chileno de Neurociencias
-              </h3>
-              <p class="text-white/70">Diplomado en Neurociencias</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-3 pt-6 sm:gap-6 sm:pt-8">
-          {
-            stats.map((stat) => (
-              <div class="group rounded-2xl border border-white/10 bg-white/5 p-4 text-center backdrop-blur-sm transition-colors sm:p-6 md:hover:bg-white/10">
-                <div class="mb-3 flex justify-center sm:mb-4">
-                  <stat.icon class="h-6 w-6 text-white/40 transition-colors group-hover:text-white sm:h-8 sm:w-8" />
-                </div>
-                <div class="mb-1 text-2xl leading-none font-bold sm:text-3xl">
-                  {stat.value}
-                </div>
-                <div class="text-[10px] leading-tight tracking-[0.14em] text-white/60 uppercase sm:text-sm sm:tracking-[0.16em]">
-                  {stat.label}
-                </div>
-              </div>
-            ))
-          }
-        </div>
       </div>
 
-      <!-- Content Side -->
-      <div class="min-w-0 space-y-8">
-        <div>
-          <h3
-            class="text-accent-foreground/60 mb-4 text-sm font-bold tracking-widest uppercase"
-          >
-            Sobre Nosotros
-          </h3>
-          <h2
-            class="text-4xl leading-tight font-bold wrap-break-word sm:text-5xl"
-          >
-            Asesoría en proyectos de telecomunicaciones
-          </h2>
+      <!-- Profile Side -->
+      <div class="relative order-1 space-y-8 lg:order-2">
+        <div
+          class="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-sky-100/50 to-slate-50 opacity-80 blur-xl"
+        >
         </div>
 
         <div
-          class="space-y-6 text-base leading-relaxed text-white/80 sm:text-lg"
+          class="relative z-10 rounded-3xl border border-slate-200/60 bg-white p-8 shadow-2xl shadow-slate-200/40 backdrop-blur-sm sm:p-10"
         >
-          <p>
-            Con más de 35 años de experiencia en telecomunicaciones, nos
-            especializamos en la gestión técnica y legal para la <strong
-              >obtención de frecuencias VHF y UHF</strong
-            > ante la Subsecretaría de Telecomunicaciones.
-          </p>
-          <p>
-            Nuestro enfoque principal abarca desde el diseño de <strong
-              >proyectos Subtel</strong
-            > hasta la implementación de sistemas de radiocomunicaciones. En los últimos
-            20 años, hemos consolidado nuestro liderazgo en <strong
-              >servicios limitados subtel</strong
-            > y trámites de telecomunicaciones.
-          </p>
-          <p>
-            Con más de 400 proyectos aprobados en Chile, garantizamos eficacia
-            en la regularización de frecuencias, radiodifusión FM y transmisión
-            de datos, participando activamente en concursos del Fondo de
-            Desarrollo de Telecomunicaciones (FDT).
-          </p>
+          <div
+            class="flex flex-col gap-6 border-b border-slate-100 pb-8 sm:flex-row sm:items-center"
+          >
+            <div
+              class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-3xl font-extrabold text-sky-600 shadow-sm sm:h-24 sm:w-24 sm:text-4xl"
+            >
+              LC
+            </div>
+            <div class="min-w-0">
+              <h2
+                class="text-foreground text-2xl font-bold tracking-tight sm:text-3xl"
+              >
+                Luis Alberto Calderón Osorio
+              </h2>
+              <p class="mt-1 text-lg font-medium text-sky-600">
+                Ingeniero Electrónico
+              </p>
+            </div>
+          </div>
+
+          <div class="space-y-6 pt-8">
+            <div
+              class="flex items-start gap-4 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-slate-50"
+            >
+              <div class="shrink-0 rounded-xl bg-slate-100 p-3 text-slate-600">
+                <GraduationCap class="h-6 w-6" />
+              </div>
+              <div>
+                <h3 class="text-foreground text-lg font-bold">
+                  Universidad de Tarapacá
+                </h3>
+                <p class="font-medium text-slate-500">Ingeniería Electrónica</p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-4 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-slate-50"
+            >
+              <div class="shrink-0 rounded-xl bg-slate-100 p-3 text-slate-600">
+                <Award class="h-6 w-6" />
+              </div>
+              <div>
+                <h3 class="text-foreground text-lg font-bold">
+                  Instituto Chileno de Neurociencias
+                </h3>
+                <p class="font-medium text-slate-500">
+                  Diplomado en Neurociencias
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="mt-4 grid grid-cols-3 gap-3 border-t border-slate-100 pt-8 sm:gap-4"
+          >
+            {
+              stats.map((stat) => (
+                <div class="group flex flex-col items-center justify-center rounded-2xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:scale-105 hover:bg-sky-50">
+                  <stat.icon class="mb-2 h-6 w-6 text-sky-500 transition-transform group-hover:-translate-y-1" />
+                  <div class="text-foreground text-2xl font-black tracking-tight sm:text-3xl">
+                    {stat.value}
+                  </div>
+                  <div class="mt-1 text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                    {stat.label}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

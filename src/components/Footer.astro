@@ -4,18 +4,24 @@ import LogoIcon from "./ui/LogoIcon.astro";
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="border-border border-t bg-white py-12 pb-8">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<footer
+  class="relative z-10 overflow-hidden border-t border-slate-200/60 bg-white py-12 pb-8"
+>
+  <div
+    class="pointer-events-none absolute inset-0 bg-gradient-to-b from-transparent to-slate-50 opacity-50"
+  >
+  </div>
+  <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mb-12 grid grid-cols-1 gap-12 md:grid-cols-3">
       <!-- Brand Section -->
-      <div class="space-y-4">
+      <div class="space-y-6">
         <div class="flex items-center gap-2">
-          <LogoIcon class="h-10 w-10" />
-          <span class="text-xl font-bold tracking-tight">
-            Tele<span class="text-accent">pro</span>
+          <LogoIcon class="h-10 w-10 text-sky-600 drop-shadow-sm" />
+          <span class="text-foreground text-2xl font-extrabold tracking-tight">
+            Tele<span class="text-sky-600">pro</span>
           </span>
         </div>
-        <p class="text-muted max-w-xs text-sm leading-relaxed">
+        <p class="max-w-xs text-sm leading-relaxed font-medium text-slate-500">
           Más de 35 años de experiencia brindando soluciones integrales en
           proyectos y asesoría de telecomunicaciones ante Subtel.
         </p>
@@ -23,25 +29,29 @@ const currentYear = new Date().getFullYear();
 
       <!-- Quick Links -->
       <div>
-        <h3 class="mb-4 font-bold">Navegación</h3>
-        <ul class="text-muted space-y-2 text-sm">
+        <h3
+          class="mb-6 text-sm font-bold tracking-wide text-slate-900 uppercase"
+        >
+          Navegación
+        </h3>
+        <ul class="space-y-3 text-sm font-medium text-slate-500">
           <li>
-            <a href="#Home" class="hover:text-accent transition-colors"
+            <a href="#Home" class="transition-colors hover:text-sky-600"
               >Inicio</a
             >
           </li>
           <li>
-            <a href="#About" class="hover:text-accent transition-colors"
+            <a href="#About" class="transition-colors hover:text-sky-600"
               >Sobre Nosotros</a
             >
           </li>
           <li>
-            <a href="#Services" class="hover:text-accent transition-colors"
+            <a href="#Services" class="transition-colors hover:text-sky-600"
               >Servicios</a
             >
           </li>
           <li>
-            <a href="#Contact" class="hover:text-accent transition-colors"
+            <a href="#Contact" class="transition-colors hover:text-sky-600"
               >Contacto</a
             >
           </li>
@@ -50,18 +60,26 @@ const currentYear = new Date().getFullYear();
 
       <!-- Contact Info -->
       <div>
-        <h3 class="mb-4 font-bold">Contacto</h3>
-        <ul class="text-muted space-y-3 text-sm">
-          <li class="flex items-start gap-3">
-            <Mail class="text-accent mt-0.5 h-4 w-4 shrink-0" />
-            <span>teleprochile@gmail.com</span>
+        <h3
+          class="mb-6 text-sm font-bold tracking-wide text-slate-900 uppercase"
+        >
+          Contacto
+        </h3>
+        <ul class="space-y-4 text-sm font-medium text-slate-500">
+          <li class="flex items-start gap-4">
+            <Mail class="mt-0.5 h-4 w-4 shrink-0 text-sky-500" />
+            <span class="cursor-pointer transition-colors hover:text-sky-600"
+              >teleprochile@gmail.com</span
+            >
           </li>
-          <li class="flex items-start gap-3">
-            <Phone class="text-accent mt-0.5 h-4 w-4 shrink-0" />
-            <span>+56 9 8378 51 62</span>
+          <li class="flex items-start gap-4">
+            <Phone class="mt-0.5 h-4 w-4 shrink-0 text-sky-500" />
+            <span class="cursor-pointer transition-colors hover:text-sky-600"
+              >+56 9 8378 51 62</span
+            >
           </li>
-          <li class="flex items-start gap-3">
-            <MapPin class="text-accent mt-0.5 h-4 w-4 shrink-0" />
+          <li class="flex items-start gap-4">
+            <MapPin class="mt-0.5 h-4 w-4 shrink-0 text-sky-500" />
             <span>Santiago, Chile</span>
           </li>
         </ul>
@@ -69,12 +87,12 @@ const currentYear = new Date().getFullYear();
     </div>
 
     <div
-      class="border-border text-muted flex flex-col items-center justify-between gap-4 border-t pt-8 text-sm md:flex-row"
+      class="flex flex-col items-center justify-between gap-4 border-t border-slate-200/60 pt-8 text-sm font-medium text-slate-500 md:flex-row"
     >
       <p>© {currentYear} Telepro. Todos los derechos reservados.</p>
       <div class="flex gap-6">
-        <a href="#" class="hover:text-accent transition-colors">Aviso Legal</a>
-        <a href="#" class="hover:text-accent transition-colors">Privacidad</a>
+        <a href="#" class="transition-colors hover:text-sky-600">Aviso Legal</a>
+        <a href="#" class="transition-colors hover:text-sky-600">Privacidad</a>
       </div>
     </div>
   </div>
