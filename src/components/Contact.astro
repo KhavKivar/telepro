@@ -5,9 +5,8 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
 
 <section
   id="Contact"
-  class="relative z-10 flex items-center justify-center overflow-hidden border-t border-slate-100 bg-slate-50 py-14 lg:py-16"
+  class="relative z-10 flex items-center justify-center overflow-hidden border-t border-slate-100 bg-slate-50 py-16 lg:py-20 lg:[@media(max-height:850px)]:py-10"
 >
-  <!-- Background Decorations -->
   <div class="pointer-events-none absolute inset-0 opacity-40">
     <div
       class="absolute top-1/4 left-[-10%] h-[40%] w-[40%] rounded-full bg-sky-100 blur-[120px]"
@@ -20,102 +19,112 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
   </div>
 
   <div
-    class="relative z-10 mx-auto grid w-[95%] max-w-7xl grid-cols-1 items-center gap-16 md:grid-cols-2"
+    class="relative z-10 mx-auto grid w-[95%] max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-16 lg:[@media(max-height:850px)]:gap-8"
   >
-    <div class="flex flex-col gap-10">
-      <div class="space-y-6">
+    <div class="flex flex-col gap-8 lg:[@media(max-height:850px)]:gap-6">
+      <div class="space-y-4 lg:[@media(max-height:850px)]:space-y-3">
         <div
-          class="mb-2 inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-bold tracking-widest text-slate-700 uppercase shadow-sm"
+          class="mb-1 inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm font-bold tracking-widest text-slate-700 uppercase shadow-sm"
         >
           Contacto
         </div>
+
         <h2
-          class="text-foreground text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl"
+          class="text-foreground text-[clamp(2.5rem,4vw+1rem,4rem)] leading-[1.1] font-extrabold tracking-tight text-balance lg:[@media(max-height:850px)]:text-5xl"
         >
           Trabajemos <span
-            class="bg-linear-to-r from-sky-600 to-blue-500 bg-clip-text text-transparent underline decoration-sky-200 decoration-4 underline-offset-8"
+            class="bg-gradient-to-r from-sky-600 to-blue-500 bg-clip-text text-transparent underline decoration-sky-200 decoration-4 underline-offset-8"
             >juntos</span
           >
         </h2>
+
         <p
-          class="max-w-md text-lg leading-relaxed font-medium text-slate-600 md:text-xl"
+          class="max-w-md text-lg leading-relaxed font-medium text-slate-600 md:text-xl lg:[@media(max-height:850px)]:text-base"
         >
           ¿Tienes dudas o necesitas asesoría? Estamos aquí para ayudarte a
           gestionar tus procesos de telecomunicaciones con total expertiz.
         </p>
       </div>
 
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-4 lg:[@media(max-height:850px)]:gap-3">
         <div
-          class="group flex items-center gap-6 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-white hover:shadow-sm"
+          class="group flex items-center gap-5 rounded-2xl border border-transparent p-3 transition-colors hover:border-slate-100 hover:bg-white hover:shadow-sm sm:p-4"
         >
           <div
-            class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 shadow-sm shadow-sky-100 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white"
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 shadow-sm shadow-sky-100 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white sm:h-14 sm:w-14 lg:[@media(max-height:850px)]:h-12 lg:[@media(max-height:850px)]:w-12"
           >
-            <Mail class="h-6 w-6" />
+            <Mail class="h-5 w-5 sm:h-6 sm:w-6" />
           </div>
           <div>
             <p
-              class="mb-1 text-xs font-bold tracking-widest text-slate-500 uppercase"
+              class="mb-0.5 text-[10px] font-bold tracking-widest text-slate-500 uppercase sm:text-xs"
             >
               Email
             </p>
-            <p class="text-foreground text-lg font-bold">
+            <p class="text-foreground text-base font-bold sm:text-lg">
               teleprochile@gmail.com
             </p>
           </div>
         </div>
 
         <div
-          class="group flex items-center gap-6 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-white hover:shadow-sm"
+          class="group flex items-center gap-5 rounded-2xl border border-transparent p-3 transition-colors hover:border-slate-100 hover:bg-white hover:shadow-sm sm:p-4"
         >
           <div
-            class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 shadow-sm shadow-sky-100 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white"
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 shadow-sm shadow-sky-100 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white sm:h-14 sm:w-14 lg:[@media(max-height:850px)]:h-12 lg:[@media(max-height:850px)]:w-12"
           >
-            <Phone class="h-6 w-6" />
+            <Phone class="h-5 w-5 sm:h-6 sm:w-6" />
           </div>
           <div>
             <p
-              class="mb-1 text-xs font-bold tracking-widest text-slate-500 uppercase"
+              class="mb-0.5 text-[10px] font-bold tracking-widest text-slate-500 uppercase sm:text-xs"
             >
               Teléfono
             </p>
-            <p class="text-foreground text-lg font-bold">+56 9 8378 51 62</p>
+            <p class="text-foreground text-base font-bold sm:text-lg">
+              +56 9 8378 51 62
+            </p>
           </div>
         </div>
 
         <div
-          class="group flex items-center gap-6 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-white hover:shadow-sm"
+          class="group flex items-center gap-5 rounded-2xl border border-transparent p-3 transition-colors hover:border-slate-100 hover:bg-white hover:shadow-sm sm:p-4"
         >
           <div
-            class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 shadow-sm shadow-sky-100 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white"
+            class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-50 text-sky-600 shadow-sm shadow-sky-100 transition-all duration-300 group-hover:bg-sky-600 group-hover:text-white sm:h-14 sm:w-14 lg:[@media(max-height:850px)]:h-12 lg:[@media(max-height:850px)]:w-12"
           >
-            <MapPin class="h-6 w-6" />
+            <MapPin class="h-5 w-5 sm:h-6 sm:w-6" />
           </div>
           <div>
             <p
-              class="mb-1 text-xs font-bold tracking-widest text-slate-500 uppercase"
+              class="mb-0.5 text-[10px] font-bold tracking-widest text-slate-500 uppercase sm:text-xs"
             >
               Ubicación
             </p>
-            <p class="text-foreground text-lg font-bold">Santiago, Chile</p>
+            <p class="text-foreground text-base font-bold sm:text-lg">
+              Santiago, Chile
+            </p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Contact Form Container -->
     <div
-      class="relative rounded-[2rem] border border-slate-200/60 bg-white p-8 shadow-2xl shadow-slate-200/50 backdrop-blur-xl sm:p-10"
+      class="relative rounded-[2rem] border border-slate-200/60 bg-white p-6 shadow-2xl shadow-slate-200/50 backdrop-blur-xl sm:p-8 lg:[@media(max-height:850px)]:p-6"
     >
       <div
-        class="pointer-events-none absolute inset-0 rounded-[2rem] bg-linear-to-tr from-sky-50/50 to-transparent"
+        class="pointer-events-none absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-sky-50/50 to-transparent"
       >
       </div>
 
-      <form class="relative z-10 flex flex-col gap-6" id="contact-form">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          <div class="flex flex-col gap-2">
+      <form
+        class="relative z-10 flex flex-col gap-4 lg:[@media(max-height:850px)]:gap-3"
+        id="contact-form"
+      >
+        <div
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:[@media(max-height:850px)]:gap-3"
+        >
+          <div class="flex flex-col gap-1.5">
             <label for="name" class="px-1 text-sm font-bold text-slate-700"
               >Nombre</label
             >
@@ -125,10 +134,11 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
               name="name"
               placeholder="Tu nombre"
               required
-              class="rounded-xl border border-slate-200 bg-slate-50 p-4 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10"
+              class="rounded-xl border border-slate-200 bg-slate-50 p-3 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10 lg:[@media(max-height:850px)]:p-2.5"
             />
           </div>
-          <div class="flex flex-col gap-2">
+
+          <div class="flex flex-col gap-1.5">
             <label for="email" class="px-1 text-sm font-bold text-slate-700"
               >Email</label
             >
@@ -138,12 +148,12 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
               name="email"
               placeholder="tu@email.com"
               required
-              class="rounded-xl border border-slate-200 bg-slate-50 p-4 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10"
+              class="rounded-xl border border-slate-200 bg-slate-50 p-3 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10 lg:[@media(max-height:850px)]:p-2.5"
             />
           </div>
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-1.5">
           <label for="subject" class="px-1 text-sm font-bold text-slate-700"
             >Asunto</label
           >
@@ -153,27 +163,27 @@ import { Mail, Phone, MapPin } from "@lucide/astro";
             name="subject"
             placeholder="¿En qué podemos ayudarte?"
             required
-            class="rounded-xl border border-slate-200 bg-slate-50 p-4 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10"
+            class="rounded-xl border border-slate-200 bg-slate-50 p-3 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10 lg:[@media(max-height:850px)]:p-2.5"
           />
         </div>
 
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-1.5">
           <label for="message" class="px-1 text-sm font-bold text-slate-700"
             >Mensaje</label
           >
           <textarea
             id="message"
-            rows="5"
+            rows="4"
             name="message"
             placeholder="Cuéntanos más sobre tu requerimiento..."
             required
-            class="resize-none rounded-xl border border-slate-200 bg-slate-50 p-4 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10"
+            class="lg:[@media(max-height:850px)]:rows-3 resize-none rounded-xl border border-slate-200 bg-slate-50 p-3 font-medium text-slate-900 placeholder-slate-400 transition-all outline-none focus:border-sky-500 focus:bg-white focus:ring-4 focus:ring-sky-500/10 lg:[@media(max-height:850px)]:p-2.5"
           ></textarea>
         </div>
 
         <button
           type="submit"
-          class="mt-2 w-full rounded-xl bg-sky-600 py-4 text-lg font-bold text-white shadow-xl shadow-sky-600/20 transition-all hover:bg-sky-700 active:scale-[0.98]"
+          class="mt-1 w-full rounded-xl bg-sky-600 py-3.5 text-base font-bold text-white shadow-xl shadow-sky-600/20 transition-all hover:bg-sky-700 active:scale-[0.98] lg:[@media(max-height:850px)]:py-3"
         >
           Enviar mensaje
         </button>
