@@ -16,9 +16,8 @@ const stats = [
 
 <section
   id="About"
-  class="relative z-10 min-h-screen overflow-hidden border-y border-slate-100 bg-white py-14 lg:py-16"
+  class="relative z-10 overflow-hidden border-y border-slate-100 bg-white py-16 lg:py-20 lg:[@media(max-height:850px)]:py-12"
 >
-  <!-- Background patterns/decorations -->
   <div class="pointer-events-none absolute inset-0 opacity-40">
     <div
       class="absolute top-0 right-[-10%] h-[50%] w-[50%] rounded-full bg-sky-50 blur-[120px]"
@@ -30,18 +29,21 @@ const stats = [
     </div>
   </div>
 
-  <div class="relative z-10 container mx-auto max-w-7xl px-4 sm:px-0">
-    <div class="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
-      <!-- Content Side -->
-      <div class="order-2 flex min-w-0 flex-col space-y-10 lg:order-1 lg:pt-4">
+  <div class="relative z-10 container mx-auto max-w-7xl px-5 sm:px-6">
+    <div
+      class="grid items-center gap-12 lg:grid-cols-2 lg:gap-12 2xl:gap-16 lg:[@media(max-height:850px)]:gap-8"
+    >
+      <div
+        class="order-2 flex min-w-0 flex-col space-y-8 lg:order-1 lg:[@media(max-height:850px)]:space-y-6"
+      >
         <div>
           <div
-            class="mb-6 inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-sm font-bold tracking-widest text-slate-700 uppercase"
+            class="mb-5 inline-flex items-center justify-center rounded-full border border-slate-200 bg-slate-100 px-4 py-1.5 text-sm font-bold tracking-widest text-slate-700 uppercase"
           >
             Sobre Nosotros
           </div>
           <h2
-            class="text-foreground mb-8 text-[clamp(2.25rem,4vw+1rem,3.75rem)] leading-[1.15] font-extrabold tracking-tight wrap-break-word"
+            class="text-foreground mb-6 text-[clamp(2rem,3vw+1rem,3.25rem)] leading-[1.15] font-extrabold tracking-tight text-balance lg:[@media(max-height:850px)]:text-4xl"
           >
             Asesoría experta en proyectos de <span
               class="bg-gradient-to-r from-sky-600 to-blue-500 bg-clip-text text-transparent"
@@ -49,7 +51,7 @@ const stats = [
             >
           </h2>
           <div
-            class="text-[clamp(1.125rem,1.5vw+0.5rem,1.25rem)] leading-relaxed font-medium text-slate-600"
+            class="text-[clamp(1rem,1.2vw+0.5rem,1.15rem)] leading-relaxed font-medium text-slate-600"
           >
             <p>
               Con más de 35 años de experiencia, nos especializamos en la
@@ -65,62 +67,69 @@ const stats = [
         </div>
       </div>
 
-      <!-- Profile Side -->
-      <div class="relative order-1 space-y-8 lg:order-2">
+      <div class="relative order-1 lg:order-2">
         <div
           class="absolute -inset-6 -z-10 rounded-[2.5rem] bg-gradient-to-tr from-sky-100/50 to-slate-50 opacity-80 blur-xl"
         >
         </div>
 
         <div
-          class="relative z-10 rounded-3xl border border-slate-200/60 bg-white p-8 shadow-2xl shadow-slate-200/40 backdrop-blur-sm sm:p-10"
+          class="relative z-10 rounded-3xl border border-slate-200/60 bg-white p-6 shadow-2xl shadow-slate-200/40 backdrop-blur-sm sm:p-8 lg:[@media(max-height:850px)]:p-6"
         >
           <div
-            class="flex flex-col gap-6 border-b border-slate-100 pb-8 sm:flex-row sm:items-center"
+            class="flex flex-col gap-5 border-b border-slate-100 pb-6 sm:flex-row sm:items-center lg:[@media(max-height:850px)]:gap-4 lg:[@media(max-height:850px)]:pb-4"
           >
             <div
-              class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-3xl font-extrabold text-sky-600 shadow-sm sm:h-24 sm:w-24 sm:text-4xl"
+              class="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-sky-100 bg-sky-50 text-3xl font-extrabold text-sky-600 shadow-sm sm:h-24 sm:w-24 lg:[@media(max-height:850px)]:h-16 lg:[@media(max-height:850px)]:w-16 lg:[@media(max-height:850px)]:text-2xl"
             >
               LC
             </div>
             <div class="min-w-0">
               <h2
-                class="text-foreground text-2xl font-bold tracking-tight sm:text-3xl"
+                class="text-foreground text-2xl font-bold tracking-tight sm:text-3xl lg:[@media(max-height:850px)]:text-2xl"
               >
                 Luis Alberto Calderón Osorio
               </h2>
-              <p class="mt-1 text-lg font-medium text-sky-600">
+              <p class="mt-1 text-base font-medium text-sky-600 sm:text-lg">
                 Ingeniero Electrónico
               </p>
             </div>
           </div>
 
-          <div class="space-y-6 pt-8">
+          <div
+            class="space-y-4 pt-6 lg:[@media(max-height:850px)]:space-y-2 lg:[@media(max-height:850px)]:pt-4"
+          >
             <div
-              class="flex items-start gap-4 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-slate-50"
+              class="flex items-start gap-4 rounded-2xl border border-transparent p-3 transition-colors hover:border-slate-100 hover:bg-slate-50 lg:[@media(max-height:850px)]:p-2"
             >
-              <div class="shrink-0 rounded-xl bg-slate-100 p-3 text-slate-600">
-                <GraduationCap class="h-6 w-6" />
+              <div
+                class="shrink-0 rounded-xl bg-slate-100 p-3 text-slate-600 lg:[@media(max-height:850px)]:p-2"
+              >
+                <GraduationCap class="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <div>
-                <h3 class="text-foreground text-lg font-bold">
+                <h3 class="text-foreground text-base font-bold sm:text-lg">
                   Universidad de Tarapacá
                 </h3>
-                <p class="font-medium text-slate-500">Ingeniería Electrónica</p>
+                <p class="text-sm font-medium text-slate-500 sm:text-base">
+                  Ingeniería Electrónica
+                </p>
               </div>
             </div>
 
             <div
-              class="flex items-start gap-4 rounded-2xl border border-transparent p-4 transition-colors hover:border-slate-100 hover:bg-slate-50"
+              class="flex items-start gap-4 rounded-2xl border border-transparent p-3 transition-colors hover:border-slate-100 hover:bg-slate-50 lg:[@media(max-height:850px)]:p-2"
             >
-              <div class="shrink-0 rounded-xl bg-slate-100 p-3 text-slate-600">
-                <Award class="h-6 w-6" />
+              <div
+                class="shrink-0 rounded-xl bg-slate-100 p-3 text-slate-600 lg:[@media(max-height:850px)]:p-2"
+              >
+                <Award class="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <div>
-                <h3 class="text-foreground text-lg font-bold">
+                <h3 class="text-foreground text-base font-bold sm:text-lg">
                   Instituto Chileno de Neurociencias
                 </h3>
-                <p class="font-medium text-slate-500">
+                <p class="text-sm font-medium text-slate-500 sm:text-base">
                   Diplomado en Neurociencias
                 </p>
               </div>
@@ -128,16 +137,16 @@ const stats = [
           </div>
 
           <div
-            class="mt-4 grid grid-cols-3 gap-3 border-t border-slate-100 pt-8 sm:gap-4"
+            class="mt-6 grid grid-cols-3 gap-3 border-t border-slate-100 pt-6 sm:gap-4 lg:[@media(max-height:850px)]:mt-4 lg:[@media(max-height:850px)]:pt-4"
           >
             {
               stats.map((stat) => (
-                <div class="group flex flex-col items-center justify-center rounded-2xl border border-slate-100 bg-slate-50/50 p-4 transition-all hover:scale-105 hover:bg-sky-50">
-                  <stat.icon class="mb-2 h-6 w-6 text-sky-500 transition-transform group-hover:-translate-y-1" />
-                  <div class="text-foreground text-2xl font-black tracking-tight sm:text-3xl">
+                <div class="group flex flex-col items-center justify-center rounded-2xl border border-slate-100 bg-slate-50/50 p-3 transition-all hover:scale-105 hover:bg-sky-50 sm:p-4">
+                  <stat.icon class="mb-1 h-5 w-5 text-sky-500 transition-transform group-hover:-translate-y-1 sm:h-6 sm:w-6 lg:[@media(max-height:850px)]:mb-0.5" />
+                  <div class="text-foreground text-xl font-black tracking-tight sm:text-2xl 2xl:text-3xl">
                     {stat.value}
                   </div>
-                  <div class="mt-1 text-[10px] font-bold tracking-widest text-slate-500 uppercase">
+                  <div class="mt-1 text-[9px] font-bold tracking-widest text-slate-500 uppercase sm:text-[10px]">
                     {stat.label}
                   </div>
                 </div>
